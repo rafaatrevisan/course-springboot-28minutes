@@ -3,8 +3,9 @@
         <title>Welcome page</title>
     </head>
     <body>
-        <div>Welcome to the main page </div>
-        <div>Hello, ${name}!</div>
-        <div><a href="list-todos">Manage your Todos</a></div>
+        <div class="container">
+            <h1>Hello, ${name}!</h1>
+            <a href="list-todos">Manage your Todos</a>
+        </div>
     </body>
 </html>
