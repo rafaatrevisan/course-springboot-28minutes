@@ -10,16 +10,23 @@ import java.util.List;
 public class TodoService {
     private static List<Todo> todoList = new ArrayList<>();
 
+    private static int todosCount = 0;
+
     static {
-        todoList.add(new Todo(1, "Rafael", "Learn AWS",
+        todoList.add(new Todo(++todosCount, "Rafael", "Learn AWS",
                 LocalDate.now().plusMonths(3), false));
-        todoList.add(new Todo(1, "Rafael", "Learn Python",
+        todoList.add(new Todo(++todosCount, "Rafael", "Learn Python",
                 LocalDate.now().plusYears(1), false));
-        todoList.add(new Todo(1, "Rafael", "Learn DevOps",
+        todoList.add(new Todo(++todosCount, "Rafael", "Learn DevOps",
                 LocalDate.now().plusMonths(2), false));
     }
 
     public List<Todo> findByUsername(String username){
         return todoList;
+    }
+
+    public void addTodo(String username, String description, LocalDate targetDate, boolean isDone){
+        Todo todo = new Todo(++todosCount, username, description, targetDate, isDone);
+        todoList.add(todo);
     }
 }
